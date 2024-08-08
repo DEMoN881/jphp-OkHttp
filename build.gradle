@@ -26,7 +26,6 @@ configurations { provided }
 sourceSets { main { compileClasspath += configurations.provided } }
 
 dependencies {
-  provided files('jars/winFX-1.0-SNAPSHOT-LIB.jar')
   provided files('jars/x-annotations-13.0.jar')
   provided files('jars/x-kotlin-stdlib-1.9.23.jar')
   provided files('jars/x-okhttp-5.0.0-alpha.14.jar')
