@@ -1,0 +1,48 @@
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+
+version 'alpha.14'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+sourceSets {
+    main.java.srcDirs = ['src-jvm/main/java']
+    main.resources.srcDirs = ['src-jvm/main/resources']
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  jcenter()
+  maven { url 'https://oss.sonatype.org/content/groups/public' }
+}
+
+configurations { provided }
+
+sourceSets { main { compileClasspath += configurations.provided } }
+
+dependencies {
+  provided files('jars/winFX-1.0-SNAPSHOT-LIB.jar')
+  provided files('jars/x-annotations-13.0.jar')
+  provided files('jars/x-kotlin-stdlib-1.9.23.jar')
+  provided files('jars/x-okhttp-5.0.0-alpha.14.jar')
+  provided files('jars/x-okio-jvm-3.9.0.jar')
+  provided files('vendor/jphp-runtime/jars/jphp-runtime-1.0.3.jar')
+
+  compile 'com.squareup.okhttp3:okhttp:5.0.0-alpha.14'
+}
+
+jar {
+   destinationDir = file('jars/')
+   baseName = 'x-jphp-OkHttp'
+}
+
+task copyJars(type: Copy) {
+  from project.configurations.compile
+  into file(projectDir.path + '/jars/')
+  rename { name -> 'x-' + name }
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jars/x-jna-5.9.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/x-jphp-WinFX-1.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/winFX-1.0-SNAPSHOT-LIB.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jars/x-jna-platform-5.9.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

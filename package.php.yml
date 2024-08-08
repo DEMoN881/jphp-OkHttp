@@ -1,0 +1,45 @@
+name: jphp-OkHttp
+version: 5.0.0-alpha.14
+
+deps:
+    jphp-runtime: '*'
+
+
+devDeps:
+  jphp-core: '*'
+  dn-bundle-plugin: '*'  
+
+config:
+  ignore:
+  - /sandbox/**
+  - /.idea/**
+  - /*.iml
+  - /.git/**
+  - /package.hub.yml
+  - /bundle/**
+  - /src-bundle/**
+  - /build
+  - /out/**
+  - /examples/**
+  - /screenshots/**
+  - /dn-sources/**
+  - /.gitignore
+  - /settings.gradle
+
+gradle:
+  deps:
+    - "com.squareup.okhttp3:okhttp:5.0.0-alpha.14"
+
+develnext-bundle:
+  version: 5.0.0-alpha.14
+  name: jphp-OkHttp
+  author: Demonck
+  icon: "develnext/bundle/okhttp/icon.png"
+  description: "Популярный http client в java"
+  group: "system"
+  class: "develnext\\bundle\\okhttp\\OkHttp"
+
+plugins:
+  - Gradle
+  - Hub
+  - Doc
