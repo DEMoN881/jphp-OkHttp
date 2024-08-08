@@ -2,7 +2,7 @@ apply plugin: "java"
 apply plugin: "idea"
 apply plugin: "eclipse"
 
-version 'alpha.14'
+version '5.0.0-alpha.14'
 
 compileJava {
     sourceCompatibility = '1.8'
@@ -27,10 +27,17 @@ sourceSets { main { compileClasspath += configurations.provided } }
 
 dependencies {
   provided files('jars/x-annotations-13.0.jar')
+  provided files('jars/x-jphp-OkHttp-5.0.0-alpha.14.jar')
   provided files('jars/x-kotlin-stdlib-1.9.23.jar')
   provided files('jars/x-okhttp-5.0.0-alpha.14.jar')
   provided files('jars/x-okio-jvm-3.9.0.jar')
-  provided files('vendor/jphp-runtime/jars/jphp-runtime-1.0.3.jar')
+  provided files('vendor/jphp-runtime/jars/jphp-runtime-1.0.3.jar',
+ 'vendor/jphp-core/jars/asm-7.3.1.jar',
+ 'vendor/jphp-core/jars/asm-analysis-7.3.1.jar',
+ 'vendor/jphp-core/jars/asm-commons-7.3.1.jar',
+ 'vendor/jphp-core/jars/asm-tree-7.3.1.jar',
+ 'vendor/jphp-core/jars/asm-util-7.3.1.jar',
+ 'vendor/jphp-core/jars/jphp-core-0.9.3-SNAPSHOT.jar')
 
   compile 'com.squareup.okhttp3:okhttp:5.0.0-alpha.14'
 }

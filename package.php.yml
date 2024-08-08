@@ -3,7 +3,7 @@ version: 5.0.0-alpha.14
 
 deps:
     jphp-runtime: '*'
-
+    jphp-core: '*'
 
 devDeps:
   jphp-core: '*'
@@ -35,7 +35,7 @@ develnext-bundle:
   name: jphp-OkHttp
   author: Demonck
   icon: "develnext/bundle/okhttp/icon.png"
-  description: "Популярный http client в java"
+  description: "Популярный мощный httpClient в java"
   group: "system"
   class: "develnext\\bundle\\okhttp\\OkHttp"
 
