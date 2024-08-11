@@ -1,5 +1,5 @@
 name: jphp-OkHttp
-version: 5.0.0-alpha.14
+version: 1.0.1
 
 deps:
     jphp-runtime: '*'
@@ -28,7 +28,7 @@ config:
 
 gradle:
   deps:
-    - "com.squareup.okhttp3:okhttp:5.0.0-alpha.14"
+    - "com.squareup.okhttp3:okhttp:4.12.0"
 
 develnext-bundle:
   version: 5.0.0-alpha.14

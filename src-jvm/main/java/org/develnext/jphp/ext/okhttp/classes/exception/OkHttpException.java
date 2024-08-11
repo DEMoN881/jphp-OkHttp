@@ -1,47 +1,33 @@
 package org.develnext.jphp.ext.okhttp.classes.exception;
 
-import java.io.IOException;
+import org.develnext.jphp.ext.okhttp.OkHttpExtension;
+import php.runtime.annotation.Reflection;
+import php.runtime.env.Environment;
+import php.runtime.lang.BaseException;
+import php.runtime.lang.exception.BaseBaseException;
+import php.runtime.reflection.ClassEntity;
 
-public class OkHttpException extends IOException {
+@Reflection.Name("OkHttpException")
+@Reflection.Namespace(OkHttpExtension.NS)
+public class OkHttpException extends BaseException {
     private String url;
     private String method;
     private String source;
     private String reason;
     private String path;
 
-    public OkHttpException() {
-        super();
-    }
-
-    public OkHttpException(String message) {
-        super(message);
-    }
-
-    public OkHttpException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public OkHttpException(Throwable cause) {
-        super(cause);
-    }
-
-    public OkHttpException(String message, String url, String method, String source, String reason,String path) {
-        super(message);
+    public OkHttpException(Environment env, String url, String method, String source, String reason, String path) {
+        super(env);
         this.url = url;
         this.method = method;
         this.source = source;
         this.reason = reason;
         this.path = path;
     }
-
-    public OkHttpException(String message, Throwable cause, String url, String method, String source, String reason, String path) {
-        super(message, cause);
-        this.url = url;
-        this.method = method;
-        this.source = source;
-        this.reason = reason;
-        this.path = path;
+    public OkHttpException(Environment env) {
+        super(env);
     }
+
 
     public String getUrl() {
         return url;
@@ -59,8 +45,7 @@ public class OkHttpException extends IOException {
         return reason;
     }
 
-    public String getPath()
-    {
+    public String getPath() {
         return path;
     }
 }

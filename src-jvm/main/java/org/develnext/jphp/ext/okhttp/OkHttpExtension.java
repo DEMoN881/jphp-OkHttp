@@ -1,16 +1,11 @@
 package org.develnext.jphp.ext.okhttp;
 
-import okhttp3.Address;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import org.develnext.jphp.ext.okhttp.classes.OkHttpClientWrapper;
-import org.develnext.jphp.ext.okhttp.classes.exception.OkHttpExceptionWrapper;
-import org.develnext.jphp.ext.okhttp.classes.response.OkHttpResponse;
-import org.develnext.jphp.ext.okhttp.classes.response.OkHttpResponseWrapper;
+import org.develnext.jphp.ext.okhttp.classes.exception.OkHttpBase;
+import org.develnext.jphp.ext.okhttp.classes.response.OkHttpResponseObject;
 import php.runtime.env.CompileScope;
 import php.runtime.ext.support.Extension;
-
-import java.io.IOException;
 
 
 public class OkHttpExtension extends Extension
@@ -26,10 +21,10 @@ public class OkHttpExtension extends Extension
     public void onRegister(CompileScope scope)
     {
 
-        registerWrapperClass(scope, OkHttpExtension.class, OkHttpExceptionWrapper.class);
-        registerWrapperClass(scope, OkHttpResponse.class, OkHttpResponseWrapper.class);
+        registerClass(scope, OkHttpExtension.class);
+        registerClass(scope, OkHttpResponseObject.class);
         registerWrapperClass(scope, OkHttpClient.class, OkHttpClientWrapper.class);
-
+        registerClass(scope, OkHttpBase.class);
 
 
     }
