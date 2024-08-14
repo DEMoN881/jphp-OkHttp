@@ -1,5 +1,8 @@
-name: jphp-OkHttp
-version: 1.0.1
+name: okHttp
+version: 1.0.3
+
+sources:
+  - 'src-php'
 
 deps:
     jphp-runtime: '*'
@@ -31,7 +34,7 @@ gradle:
     - "com.squareup.okhttp3:okhttp:4.12.0"
 
 develnext-bundle:
-  version: 5.0.0-alpha.14
+  version: 1.0.3
   name: jphp-OkHttp
   author: Demonck
   icon: "develnext/bundle/okhttp/icon.png"

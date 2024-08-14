@@ -2,7 +2,7 @@ apply plugin: "java"
 apply plugin: "idea"
 apply plugin: "eclipse"
 
-version '1.0.1'
+version '1.0.3'
 
 compileJava {
     sourceCompatibility = '1.8'
@@ -48,7 +48,7 @@ dependencies {
 
 jar {
    destinationDir = file('jars/')
-   baseName = 'x-jphp-OkHttp'
+   baseName = 'x-okHttp'
 }
 
 task copyJars(type: Copy) {
